@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>$VOID — Enter the Void</title>
+  <meta name="description" content="$VOID — Liquidity goes in. Nothing comes out.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <header class="site-header">
+    <div class="logo-min">$VOID</div>
+    <nav>
+      <a href="#lore">Lore</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#stream">Stream</a>
+      <a class="cta" id="enterBtn" href="#enter">Enter</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="enter">
+    <div class="hero-inner">
+      <div class="void-logo">
+        <!-- Inline SVG Logo -->
+        <svg class="svg-logo" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <radialGradient id="ringGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#7b5cff" stop-opacity="0.0"/>
+              <stop offset="65%" stop-color="#7b5cff" stop-opacity="0.0"/>
+              <stop offset="80%" stop-color="#7b5cff" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="#00d1ff" stop-opacity="0.9"/>
+            </radialGradient>
+            <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#e7fbff"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Neon ring -->
+          <g filter="url(#glow)">
+            <circle id="ring" cx="600" cy="300" r="250" fill="none" stroke="url(#ringGrad)" stroke-width="10"/>
+            <!-- soft outer aura -->
+            <circle cx="600" cy="300" r="260" fill="none" stroke="#7b5cff" stroke-opacity="0.2" stroke-width="18"/>
+          </g>
+
+          <!-- VOID text -->
+          <g class="logo-text" filter="url(#glow)">
+            <text x="600" y="320" text-anchor="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu" font-size="180" font-weight="800" fill="url(#textGrad)" letter-spacing="8">$VOID</text>
+          </g>
+        </svg>
+      </div>
+      <p class="tagline">Liquidity goes in. <span class="mute">Nothing comes out.</span></p>
+      <div class="hero-ctas">
+        <a class="btn primary" href="#stream">Watch Stream</a>
+        <a class="btn ghost" href="#tokenomics">Tokenomics</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="lore" class="section">
+    <div class="container">
+      <h2>Lore</h2>
+      <p class="glitchy" data-text="Stare into the $VOID long enough… and it stares back. This is the infinite stream. No start, no end, no sound. Degens don’t buy coins. They buy nothingness.">
+        Stare into the <strong>$VOID</strong> long enough… and it stares back. This is the infinite stream. No start, no end, no sound.
+        Degens don’t buy coins. They buy <em>nothingness</em>.
+      </p>
+      <p class="mono">Throw your bags into the <strong>$VOID</strong> and pray it pumps.</p>
+    </div>
+  </section>
+
+  <section id="tokenomics" class="section">
+    <div class="container">
+      <h2>Tokenomics</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="k">Ticker</div>
+          <div class="v">$VOID</div>
+        </div>
+        <div class="card">
+          <div class="k">Supply</div>
+          <div class="v">1,000,000,000</div>
+        </div>
+        <div class="card">
+          <div class="k">Chain</div>
+          <div class="v">Solana</div>
+        </div>
+        <div class="card">
+          <div class="k">Launch</div>
+          <div class="v">Pump.fun</div>
+        </div>
+      </div>
+      <div class="links">
+        <a class="btn link" id="pumpLink" target="_blank" rel="noopener">Pump.fun</a>
+        <a class="btn link" id="dexLink" target="_blank" rel="noopener">Dexscreener</a>
+        <a class="btn link" id="xLink" target="_blank" rel="noopener">X (Twitter)</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="stream" class="section stream-section">
+    <div class="container">
+      <h2>Live Stream</h2>
+      <p class="sub">Embed your Pumpfun stream link or Sora video here.</p>
+      <div class="player-shell">
+        <iframe class="player" src="about:blank" title="$VOID Stream" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <p class="hint">In OBS: add <span class="code">Media Source</span> and loop your $VOID MP4. Pumpfun mutes audio by default.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Enter the Void.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
